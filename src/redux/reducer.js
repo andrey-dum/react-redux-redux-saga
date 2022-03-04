@@ -19,7 +19,7 @@ function initApiState() {
 const INITIAL_STATE = initApiState();
 
 const apiReducer = (state= INITIAL_STATE, action) => {
-    if (action.type.startWith(API_ACTIONS.FETCH_START)) {
+    if (action.type.startsWith(API_ACTIONS.FETCH_START)) {
         const inner = camelCase(action.type.replace(API_ACTIONS.FETCH_START, ''))
 
         return ({
@@ -32,7 +32,7 @@ const apiReducer = (state= INITIAL_STATE, action) => {
         })
     }
 
-    if (action.type.startWith(API_ACTIONS.FETCH_SUCCESS)) {
+    if (action.type.startsWith(API_ACTIONS.FETCH_SUCCESS)) {
         const inner = camelCase(action.type.replace(API_ACTIONS.FETCH_SUCCESS, ''))
 
         return ({
@@ -46,7 +46,7 @@ const apiReducer = (state= INITIAL_STATE, action) => {
         })
     }
 
-    if (action.type.startWith(API_ACTIONS.FETCH_FAILURE)) {
+    if (action.type.startsWith(API_ACTIONS.FETCH_FAILURE)) {
         const inner = camelCase(action.type.replace(API_ACTIONS.FETCH_FAILURE, ''))
 
         return ({
