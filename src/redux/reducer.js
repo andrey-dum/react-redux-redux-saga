@@ -6,7 +6,7 @@ function initApiState() {
     return Object.keys(ENDPOINTS).reduce((acc, next) => {
         const inner = {
             data: null,
-            loadung: false,
+            loading: false,
             error: null
         }
 

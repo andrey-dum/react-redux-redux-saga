@@ -8,17 +8,29 @@ class Api {
         this.endpoints = endpoints;
     }
 
-    async generateRequest(endpoint, data) {
+    async generateRequest(endpoint) {
         const { method, url } = this.endpoints[endpoint]
 
-        return fetch(`${this.baseUrl}/${url}`, { method,  body: { data }})
+        return fetch(`${this.baseUrl}/${url}`, { method})
     }
 
-    async fetch(endpoint, data) {
-        const response = await this.generateRequest(endpoint, data);
+    async fetch(endpoint, ) {
+        const response = await this.generateRequest(endpoint, );
 
         return response.json();
     }
+
+    // async generateRequest(endpoint, data) {
+    //     const { method, url } = this.endpoints[endpoint]
+
+    //     return fetch(`${this.baseUrl}/${url}`, { method,  body: { data }})
+    // }
+
+    // async fetch(endpoint, data) {
+    //     const response = await this.generateRequest(endpoint, data);
+
+    //     return response.json();
+    // }
 
     
 }
