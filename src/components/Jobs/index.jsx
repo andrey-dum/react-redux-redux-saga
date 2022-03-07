@@ -1,10 +1,7 @@
 import { useEffect } from "react"
-import { useSelector } from "react-redux"
-import { useDispatch } from "react-redux"
 import { useFetch } from "../../hooks/useFetch"
-import api from "../../modules/api/api"
 import { JOBS } from "../../modules/api/endpoints"
-import { apiActions } from "../../redux/actions"
+import { Navigation } from "../common/Navigation"
 
 
 export const Jobs = () => {
@@ -27,6 +24,7 @@ export const Jobs = () => {
     // } , [])
 
     const { response, perforFetch } = useFetch(JOBS);
+    const { loading, data } = response;
 
     useEffect(() => {
         perforFetch()
@@ -35,8 +33,9 @@ export const Jobs = () => {
     console.log(response)
 
     return (
-        <div>
-            Jobs
-        </div>
+            <Navigation
+                loading={loading}
+                services={data}
+            />
     )
 }
