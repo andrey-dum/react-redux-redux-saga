@@ -23,12 +23,12 @@ export const Jobs = () => {
 
     // } , [])
 
-    const { response, perforFetch } = useFetch(JOBS);
+    const { response, performFetch } = useFetch(JOBS);
     const { loading, data } = response;
 
     useEffect(() => {
-        perforFetch()
-    }, [perforFetch])
+        performFetch()
+    }, [performFetch])
 
     console.log(response)
 

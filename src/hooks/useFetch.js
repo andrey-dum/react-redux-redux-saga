@@ -10,13 +10,13 @@ export const useFetch = (endpoint) => {
     const apiState = useSelector(selectApiState);
     const dispatch = useDispatch();
 
-    const perforFetch = useCallback(data => dispatch(apiActions.fetch(endpoint, data)), [endpoint, dispatch])
+    const performFetch = useCallback(data => dispatch(apiActions.fetch(endpoint, data)), [endpoint, dispatch])
     const response = useMemo(() => apiState[camelCase(endpoint)], [apiState, endpoint])
 
 
     return {
         response,
-        perforFetch
+        performFetch
     }
 }
 

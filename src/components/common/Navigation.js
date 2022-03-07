@@ -13,6 +13,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { CircularProgress, Grid } from '@material-ui/core';
+import NavItem from './NavItem';
 
 
 const drawerWidth = 240;
@@ -71,10 +72,10 @@ export const Navigation = ({ loading, services }) => {
                   </Grid>
               ) : (
                 services.map(({ id, jobId, title }) => (
-                    <ListItem button key={id}>
-                        {/* <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon> */}
-                        <ListItemText primary={title} />
-                    </ListItem>
+                    // <ListItem button key={id}>
+                    //     <ListItemText primary={title} />
+                    // </ListItem>
+                    <NavItem key={id} jobId={jobId} title={title} id={id} />
                 ))
               )
             }
